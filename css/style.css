@@ -1,0 +1,36 @@
+body {
+  background: #F2F3F3;
+  color: #252525;
+  font-family: 'Helvetica', sans-serif;
+  /*font-weight: 400;*/
+  font-size: 16px;
+}
+
+h1{
+	text-align: center;
+	font-size: 50pt;
+	margin-top: 50px;
+}
+
+h3{
+	font-size: 40pt;
+	font-weight: 300;
+	margin-top: 50px;
+}
+
+.lessMargin{
+	margin-top: 10px;
+}
+
+.bold{
+	font-weight: 900;
+}
+
+.content{
+	margin-top: 30px;
+}
+
+.medium-img{
+	max-height: 380px;
+	float:right;
+}
