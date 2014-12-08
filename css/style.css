@@ -34,3 +34,15 @@ h3{
 	max-height: 380px;
 	float:right;
 }
+
+.bingo-logo{
+	float: right;
+	max-height: 50px;
+	position: absolute;
+	bottom: 10px;
+	right:20px;
+}
+
+.input-space{
+	margin-top: 10px;
+}

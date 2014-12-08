@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body{
+	background-color: #e9eaed;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	color: #252525;
+}
+
+.blue-navbar{
+	background-color: #30b7f2;
+	border-color: #cbcccc;
+	font-size: 18pt;
+}
+
+.sub-nav{
+	background-color: white;
+	color: #252525;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+
+.extra-pad{
+	padding-top:30px;
+}
+
+a{
+	color:white;
+}
+.dark-a{
+	color: #252525;
+}
+.logo{
+	max-height: 70px;
+}
+
+#container{
+	text-align: center;
+}
+
+.page{
+	margin: 168px 23px 64px 23px;
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	min-width: 842px;
+	background-color: white;
+	padding: 20px 20px 20px 20px;
+}
+
+.weekform{
+	margin-top: 30px;
+}
+
+.input-space{
+	margin-top: 10px;
+}
