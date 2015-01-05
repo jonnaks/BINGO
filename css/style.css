@@ -46,3 +46,17 @@ h3{
 .input-space{
 	margin-top: 10px;
 }
+
+@-webkit-keyframes fadey {
+0% { opacity: 0; }
+15% { opacity: 1; }
+85% { opacity: 1; }
+100% { opacity: 0; }
+}
+
+figure#slideshow { width: 100%; margin: 0 auto; position: relative; }
+figure#slideshow .slides {
+position: absolute; left: 0; top: 0;
+width: 100%; height: auto; opacity: 0;
+}
+figure#slideshow .slides:first-child { position: relative; }
