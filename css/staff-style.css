@@ -18,6 +18,8 @@ body{
 	color: #252525;
 	margin-top: 100px;
 	margin-bottom: 50px;
+	border-color: #cbcccc;
+	border-size: 1px;
 }
 
 .extra-pad{
