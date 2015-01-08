@@ -1,14 +1,27 @@
-function getSlides() {
-	$.ajax({
-		url: 'getSlides.php', //the script to call to get data          
-		data: "", //you can insert url argumnets here to pass to api.php
-		//for example "id=5&parent=6"
-		dataType: 'json', //data format      
-		success: function(data) //on recieve of reply
-			{
-				var id = data[0]; //get id
-				var vname = data[1]; //get name
-				console.log(vname);
+function getSlides(str) {
+	console.log('inne i getSlides');
+	if (str == "") {
+		//document.getElementById("txtHint").innerHTML = "";
+		console.log("tom sträng skickat till funktion");
+		return;
+	} else {
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				console.log(xmlhttp.responseText);
 			}
-	});
+		}
+		xmlhttp.open("GET", "getSlides.php?q=" + str, true);
+		xmlhttp.send();
+	}
 }
+
+$(document).ready(function() {
+	getSlides("hej");
+});
