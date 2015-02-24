@@ -112,7 +112,7 @@ var server = http.Server(function (request, response) {
 
     var filePath = path.join(clientDir, request.url);
     if (filePath.indexOf(clientDir) != 0 || filePath == clientDir)
-        filePath = path.join(clientDir, "/webrtc_example.html");
+        filePath = path.join(clientDir, "/index.html");
 
     fs.exists(filePath, function (exists) {
         if (!exists) {
