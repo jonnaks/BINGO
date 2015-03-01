@@ -6,7 +6,7 @@ function makeHTML(jsonList) {
 		console.log("inne i loop");
 		console.log(list[obj]);
 		var h;
-		list[obj] = JSON.parse(list[obj]); //parsar igen..
+		list[obj] = JSON.parse(list[obj]); //parsar igen.. hej hej
 
 		if (list[obj].type == "food") {
 			h = "<div class='slides'><div class='row'><div class='col-md-12'>" +
