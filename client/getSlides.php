@@ -1,35 +1,34 @@
 <?php
-$q = intval($_GET['q']);
+header('Content-type: text/html; charset=utf-8');
+
+$q = $_GET['q'];
 
 $con = mysqli_connect('movinmedia.se.mysql','movinmedia_se','qF2D4n8j','movinmedia_se');
 if (!$con) {
   die('Could not connect: ' . mysqli_error($con));
 }
 
-mysqli_select_db($con,"ajax_demo");
-$sql="SELECT * FROM Slide WHERE id=1";
+mysqli_select_db($con,"movinmedia_se");
+$sql = "SELECT * FROM `Slide` WHERE startDate <= '" . $q . "' AND endDate > '". $q . "'";
 $result = mysqli_query($con,$sql);
 
-echo "<table border='1'>
-<tr>
-<th>id</th>
-<th>food</th>
-<th>startDate</th>
-<th>endDate</th>
-<th>text1</th>
-<th>text2</th>
-</tr>";
+$a = array();
+$jsonArrayList = array();
 
 while($row = mysqli_fetch_array($result)) {
-  echo "<tr>";
-  echo "<td>" . $row['FirstName'] . "</td>";
-  echo "<td>" . $row['LastName'] . "</td>";
-  echo "<td>" . $row['Age'] . "</td>";
-  echo "<td>" . $row['Hometown'] . "</td>";
-  echo "<td>" . $row['Job'] . "</td>";
-  echo "</tr>";
-}
-echo "</table>";
 
+  $a['id']=$row["id"];
+  $a['type']=$row["type"];
+  $a['startDate']=$row["startDate"];
+  $a['endDate']=$row["endDate"];
+  $a['imgURL']=$row["imgURL"];
+  $a['text1']=$row["text1"];
+  $a['text2']=$row["text2"];
+  
+  $jsonArrayList[] = json_encode($a);
+  
+}
+
+echo(json_encode($jsonArrayList));
 mysqli_close($con);
 ?>
