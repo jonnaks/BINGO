@@ -1,13 +1,23 @@
+function getSweMonth(n) {
+	var monthArray = ["Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"];
+	var month = monthArray[n];
+	return month;
+}
+
 function makeHTML(jsonList) {
 	var obj;
 	//var list = jsonList;
+	console.log("jaha");
 	var list = JSON.parse(jsonList);
+	console.log(list);
 	for (obj in list) {
 		console.log("inne i loop");
 		console.log(list[obj]);
 		var h;
 		list[obj] = JSON.parse(list[obj]); //parsar igen.. hej hej
 
+
+	
 		if (list[obj].type == "food") {
 			h = "<div class='slides'><div class='row'><div class='col-md-12'>" +
 				"<u><h1>Matsedel</h1></u></div></div><div class='content'><div class='row'>" +
@@ -26,12 +36,13 @@ function makeHTML(jsonList) {
 			    "<div class='col-md-4'><img class='medium-img lessMargin' src='img/" + list[obj].imgURL + "'/></div></div></div></div></div>" +
 			    "</div>";
 		}
-		else if (list[obj].type == "fodelsedag") {
-		    h = "<div class='container'><div class='row'><div ='col-md-12'><h1 class='bold'> Dag Datum Ã…r </h1></div></div>" +
+		else if (list[obj].type == "bday") {
+			var d = new Date();
+			var month = getSweMonth(d.getMonth());
+		    h = "<div class='slides'><div class='row'><div ='col-md-12'><u><h1> Den "+ d.getDate() +" "+ month +" "+ d.getFullYear() +" </h1></u></div></div>" +
 		        "<div class='content'><div class='row'><div class='col-md-1'></div>" +
-				"<div class='col-md-7'><h3 class='bold'> Grattis</h3><h3 class='bold lessMargin'>" + list[obj].name + "</h3>" +
-				"<h3 class='bold lessMargin'> pÃ¥ fÃ¶delsedagen!</h3></div>" +
-			    "<div class='col-md-3'><img class='medium-img lessMargin' src='img/" + list[obj].imgURL + "'/></div>"+
+				"<div class='col-md-6'><h3> Grattis " + list[obj].text1 + " på födelsedagen!</h3></div>" +
+			    "<div class='col-md-4'><img class='medium-img lessMargin' src='img/" + list[obj].imgURL + "'/></div>"+
 		        "<div class='col-md-1'></div></div></div></div>";
 		}
 		else {
@@ -78,7 +89,7 @@ function getSlides(str) {
 }
 
 function getDates() {
-	var date = "2015-02-04";
+	var date = "2015-01-20";
 	getSlides(date);
 }
 
