@@ -18,11 +18,10 @@ function makeHTML(jsonList) {
 				"<div class='col-md-1'></div></div></div></div>";
 		} 
 		else if (list[obj].type == "activity") {
-		    h = "<div class='slides'>" +
-		        "<div class='container'><div class='row'><div ='col-md-12'>" +
-				"<h1 class='bold'> Aktivitet </h1></div></div>" +
-		        "<div class='content'><div class='row'><div class='col-md-12'>" +
-				"<div class='col-md-8'><h3 class='small'> Kl " + list[obj].text1 + "</h3>" +
+		    h = "<div class='slides'><div class='row'><div ='col-md-12'>" +
+				"<u><h1>Aktivitet</h1></u></div></div><div class='content'><div class='row'>" +
+		        "<div class='col-md-1'></div>" +
+				"<div class='col-md-6'><h3 class='small'> Kl " + list[obj].text1 + ":</h3>" +
 			    "<h3 class='bold'>" + list[obj].text2 + "</h3></div>" +
 			    "<div class='col-md-4'><img class='medium-img lessMargin' src='img/" + list[obj].imgURL + "'/></div></div></div></div></div>" +
 			    "</div>";
