@@ -13,9 +13,9 @@
 			imgs = document.getElementById('slideshow').children;
 			interval = 8000;
 			currentPic = 0;
-			console.log("ready:" + imgs[currentPic]);
+			//console.log("ready:" + imgs[currentPic]);
 			if (imgs[currentPic]==undefined){
-				console.log("UNDEFINED");
+				//console.log("UNDEFINED");
 				setTimeout(function(){
 					makeSlideshow()},1000);
 			}
