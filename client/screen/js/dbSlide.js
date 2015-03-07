@@ -45,6 +45,25 @@ function makeHTML(jsonList) {
 			    "<div class='col-md-4'><img class='medium-img lessMargin' src='img/" + list[obj].imgURL + "'/></div>"+
 		        "<div class='col-md-1'></div></div></div></div>";
 		}
+		else if (list[obj].type == "contact") {
+			var a = list[obj].text1;
+			console.log(a);
+			getName(a);
+			var g="";
+			
+			for (var o in rArray){
+				var obj = rArray[o];
+				var na = obj.name;
+				var nu = obj.number;
+				g = g +  "<div class='content'><div class='row'><div class='col-md-2'></div><div class='col-md-4'>"+
+							"<h3 class='bold lessMargin'>" + na + "</h3></div><div class='col-md-1'></div>"+
+							"<div class='col-md-4'><h3 class='lessMargin'>" + nu + 
+							"</h3></div><div class='col-md-1'></div></div></div>";
+			}
+			
+		    h = "<div class='slides'><div class='row'><div class='col-md-12'>" +
+				"<u><h1>Kontaktuppgifter</h1></u></div></div>"+ g +"</div>";	
+		}
 		else {
 			console.log("annan typ än food");
 		}
@@ -86,6 +105,26 @@ function getSlides(str) {
 		//xmlhttp.open("GET", "getSlides.php?q=" + str, true);
 		xmlhttp.send();
 	}
+}
+
+function getName(a) {
+	
+	var res = a.split("/");
+	console.log(res);
+	  
+	var rObj;
+	rArray = [];
+	
+	for (var r in res){
+	console.log("r:" + res[r]);
+	rObj = JSON.parse(res[r]);
+	console.log(typeof(res[r]));
+	rArray.push(rObj);
+	//console.log(rArray);
+	}
+	
+	return rArray;
+	
 }
 
 function getDates() {
